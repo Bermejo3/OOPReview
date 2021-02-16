@@ -12,6 +12,7 @@ export class MobileLibrary{
         this.name = name
         this.location = location
         this.mobiles = mobiles
+        this.totalPrice = this.totalPriceCalculation()
     }
 
     //Metodos Getter y Setter
@@ -41,15 +42,24 @@ export class MobileLibrary{
 
     public setMobiles(mobiles: Mobile[]){
         this.mobiles = mobiles
+        this.totalPrice = this.totalPriceCalculation()
     }
 
     //Metodos públicos
-    public totalPriceCalculation(){
+    public printLibrary(){
+        console.log(`"This are all my mobiles:"`);
+        for (let i=0; i<this.mobiles.length;i++){
+            console.log(this.mobiles[i].characteristics())
+        }
+        console.log(`"Price overall: ${this.totalPrice}"`)
+    }
+
+    //Metodos Privados
+    private totalPriceCalculation():number{
         let totalPrice: number = 0
         for (let i=0; i<this.mobiles.length; i++){
             totalPrice += this.mobiles[i].getPrice()
         }
-        this.totalPrice = totalPrice
         return totalPrice
     }
 }

@@ -23,10 +23,11 @@ console.log(tienda.getMobiles());
 tienda.setMobiles([nokia3210, honor9]);
 console.log(tienda.getMobiles());
 console.log("");
-console.log(tienda.getTotalPrice());
-console.log(tienda.totalPriceCalculation());
-console.log(tienda.getTotalPrice());
-
+console.log(tienda.getTotalPrice()); 
+// console.log(tienda.totalPriceCalculation()); // Válido cuando el metodo era público
+// console.log(tienda.getTotalPrice());
+tienda.setMobiles(arrayMobiles) // reset de todos los mobiles
+tienda.printLibrary()
 
 
 
